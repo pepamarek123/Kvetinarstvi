@@ -88,7 +88,37 @@
             <!-- FOTOGALERIE -->
             <div class="info-section hidden" id="fotogalerie">
                 <h2 class="info-heading">Fotogalerie</h2>
-                <p>Obsah fotogalerie bude doplněn.</p>
+                <div class="fotogal-wrap">
+
+                    <!-- Vertikální menu -->
+                    <nav class="fotogal-nav">
+                        <a class="fotogal-nav-item active" data-dir="img_gallery/1dk">Dárkové kytice</a>
+                        <a class="fotogal-nav-item" data-dir="img_gallery/2sk">Svatební kytice</a>
+                        <a class="fotogal-nav-item" data-dir="img_gallery/3nk">Netradiční kytice</a>
+                        <a class="fotogal-nav-item" data-dir="img_gallery/4sv">Smuteční vazba</a>
+                        <a class="fotogal-nav-item" data-dir="img_gallery/5dv">Dušičková vazba</a>
+                        <a class="fotogal-nav-item" data-dir="img_gallery/6vs">Výzdoba stolů</a>
+                        <a class="fotogal-nav-item" data-dir="img_gallery/7hk">Hrnkové květiny</a>
+                        <a class="fotogal-nav-item" data-dir="img_gallery/8dz">Dárkové zboží</a>
+                        <a class="fotogal-nav-item" data-dir="img_gallery/9pu">Půjčovna</a>
+                    </nav>
+
+                    <!-- Mřížka náhledů -->
+                    <div class="fotogal-grid" id="fotogal-grid">
+                        <p class="fotogal-loading">Načítám fotografie…</p>
+                    </div>
+                </div>
+
+                <!-- Lightbox -->
+                <div class="lightbox" id="lightbox">
+                    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+                    <div class="lightbox-img-wrap">
+                        <button class="lightbox-close" id="lightbox-close">&times;</button>
+                        <button class="lightbox-arrow lightbox-prev" id="lightbox-prev">&#8249;</button>
+                        <img class="lightbox-img" id="lightbox-img" src="" alt="">
+                        <button class="lightbox-arrow lightbox-next" id="lightbox-next">&#8250;</button>
+                    </div>
+                </div>
             </div>
 
             <!-- KONTAKTY -->
@@ -153,6 +183,7 @@
 
     </div>
 
+    <script src="gallery-data.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

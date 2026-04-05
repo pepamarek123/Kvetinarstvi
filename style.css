@@ -184,6 +184,166 @@ body {
     top: 3px;
 }
 
+/* ── FOTOGALERIE ── */
+.fotogal-wrap {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+/* Vertikální menu */
+.fotogal-nav {
+    display: flex;
+    flex-direction: column;
+    min-width: 170px;
+    gap: 4px;
+}
+
+.fotogal-nav-item {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #f5f0e0;
+    background-color: #2d5a27;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 0.4px;
+    transition: background-color 0.2s, color 0.2s;
+    border-left: 3px solid transparent;
+}
+
+.fotogal-nav-item:hover {
+    background-color: #3d7a37;
+}
+
+.fotogal-nav-item.active {
+    background-color: #1e3d1a;
+    border-left: 3px solid #f0c040;
+    color: #f0c040;
+}
+
+/* Mřížka náhledů */
+.fotogal-grid {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-content: flex-start;
+}
+
+.fotogal-loading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.fotogal-thumb {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 2px solid transparent;
+}
+
+.fotogal-thumb:hover {
+    transform: scale(1.06);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+    border-color: #2d5a27;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    cursor: default;
+}
+
+.lightbox-img {
+    position: relative;
+    z-index: 1002;
+    max-width: 80vw;
+    max-height: 88vh;
+    border-radius: 8px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.7);
+}
+
+.lightbox-img-wrap {
+    position: relative;
+    z-index: 1001;
+    display: inline-flex;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 1003;
+    background: rgba(0,0,0,0.45);
+    border: none;
+    color: #fff;
+    font-size: 1.3rem;
+    line-height: 1;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.lightbox-close:hover {
+    background: rgba(0,0,0,0.72);
+}
+
+.lightbox-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1003;
+    background: rgba(0,0,0,0.35);
+    border: none;
+    color: #fff;
+    font-size: 2.2rem;
+    line-height: 1;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.lightbox-arrow:hover {
+    background: rgba(0,0,0,0.65);
+}
+
+.lightbox-prev { left:  10px; }
+.lightbox-next { right: 10px; }
+
 /* ── KONTAKTY ── */
 .kontakt-wrap {
     display: flex;
