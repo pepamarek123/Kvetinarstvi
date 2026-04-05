@@ -35,6 +35,12 @@ function closeLightbox() {
     lightboxOpenTimer = null;
 }
 
+function thumbUrl(dir, file) {
+    // např. img_gallery/1dk → img_gallery/thumbs/1dk
+    const parts = dir.split('/');
+    return `${parts[0]}/thumbs/${parts[1]}/${file}`;
+}
+
 function renderGallery(files) {
     currentFiles = files;
     fotogalGrid.innerHTML = '';
@@ -44,7 +50,7 @@ function renderGallery(files) {
     }
     files.forEach((file, idx) => {
         const img = document.createElement('img');
-        img.src       = `${currentDir}/${file}`;
+        img.src       = thumbUrl(currentDir, file);   // náhled (malý soubor)
         img.alt       = file;
         img.className = 'fotogal-thumb';
 
