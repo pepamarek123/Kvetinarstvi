@@ -4,13 +4,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Květinářství</title>
-    <style>
-        body {
-            background-color: #e8e8e8;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
 
+        <div class="top">
+            <div class="gallery">
+                <img src="img_top/foto kvetiny 108.jpg" alt="Galerie" class="gallery-img active">
+                <img src="img_top/foto kvettiny 102.jpg" alt="Galerie" class="gallery-img">
+                <img src="img_top/ivi foto 033.JPG" alt="Galerie" class="gallery-img">
+                <img src="img_top/ivi foto 380.JPG" alt="Galerie" class="gallery-img">
+                <img src="img_top/samsung 040.jpg" alt="Galerie" class="gallery-img">
+                <img src="img_top/samsung 373.jpg" alt="Galerie" class="gallery-img">
+                <img src="img_top/samsung 380.jpg" alt="Galerie" class="gallery-img">
+            </div>
+            <img src="img_top/lilie.svg" alt="Lilie" class="top-lily">
+            <div class="top-text">
+                <p class="top-title">Květinářství Bošovice</p>
+                <p class="top-subtitle">Iveta Ondrůjová</p>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <a href="#uvod" class="menu-item">Úvodní strana</a>
+            <a href="#fotogalerie" class="menu-item">Fotogalerie</a>
+            <a href="#kontakty" class="menu-item">Kontakty</a>
+        </nav>
+
+        <div class="info">
+
+            <!-- ÚVODNÍ STRANA -->
+            <div class="info-section" id="uvod">
+                <h2 class="info-heading">O nás</h2>
+                <p>Květinářství jsme otevřeli v roce 2003. Nachází se v prostorách rodinného domu na ulici Lipová v obci Bošovice. Během několika let jsme si získali své stálé zákazníky, kteří se k nám stále vrací. Našim cílem je, aby byl zákazník s nákupem u nás spokojený. Vážeme kytice pro jakoukoli příležitost.</p>
+                <p>Připravíme Vám výzdobu na slavnostní tabuli. Svatební výzdobu dodáme na místo konání hostiny nebo obřadu. Kytice si můžete objednat i po telefonické domluvě.</p>
+
+                <h3 class="info-subheading">Sortiment</h3>
+                <ul class="info-list">
+                    <li>řezané květiny</li>
+                    <li>hrnkové pokojové květiny</li>
+                    <li>hrnkové venkovní trvalky i letničky</li>
+                    <li>vonné, dekorační a hřbitovní svíčky</li>
+                    <li>keramické a plastové obaly a vázy</li>
+                    <li>keramika užitková i dekorační</li>
+                    <li>proutěné obaly</li>
+                    <li>drobné přízdoby a sušina</li>
+                    <li>vonné oleje a vosky</li>
+                </ul>
+
+                <h3 class="info-subheading">Služby</h3>
+                <ul class="info-list">
+                    <li>tradiční i netradiční květinové vazby</li>
+                    <li>svatební kytice a šperky</li>
+                    <li>dárkové kytice</li>
+                    <li>smuteční kytice a věnce</li>
+                    <li>dušičkové kytice a věnce</li>
+                    <li>vánoční dekorace a věnce</li>
+                    <li>výzdoby slavnostních tabulí</li>
+                    <li>suché vazby</li>
+                </ul>
+
+                <h3 class="info-subheading">Půjčujeme</h3>
+                <ul class="info-list">
+                    <li>obaly na květinové aranžmá</li>
+                    <li>dekorace a svícny na výzdobu slavnostních tabulí</li>
+                </ul>
+
+                <h3 class="info-subheading">Reference</h3>
+                <ul class="info-list">
+                    <li>OU Bošovice</li>
+                    <li>Pohostinství Na Návsi – Bošovice</li>
+                    <li>Beton Brož – Otnice</li>
+                    <li>Hotel Sokolský Dům – Slavkov u Brna</li>
+                    <li>ZŠ Šlapanice</li>
+                    <li>Hotel Avalanche – Dolní Moravice</li>
+                </ul>
+            </div>
+
+            <!-- FOTOGALERIE -->
+            <div class="info-section hidden" id="fotogalerie">
+                <h2 class="info-heading">Fotogalerie</h2>
+                <p>Obsah fotogalerie bude doplněn.</p>
+            </div>
+
+            <!-- KONTAKTY -->
+            <div class="info-section hidden" id="kontakty">
+                <h2 class="info-heading">Kontakty</h2>
+
+                <div class="kontakt-wrap">
+
+                    <!-- Levý sloupec: kontaktní údaje -->
+                    <div class="kontakt-info">
+                        <h3 class="info-subheading">Adresa</h3>
+                        <p class="kontakt-text">
+                            Květinářství Iveta Ondrůjová<br>
+                            Lipová 54<br>
+                            664 84 Bošovice
+                        </p>
+
+                        <h3 class="info-subheading">Telefon</h3>
+                        <p class="kontakt-text">
+                            <a href="tel:+420728752306">728 752 306</a>
+                        </p>
+
+                        <h3 class="info-subheading">E-mail</h3>
+                        <p class="kontakt-text">
+                            <a href="mailto:kvetinkaondrujova@seznam.cz">kvetinkaondrujova@seznam.cz</a>
+                        </p>
+
+                        <h3 class="info-subheading">Otevírací doba</h3>
+                        <table class="oteviraci-doba">
+                            <tr><td>Pondělí</td><td>8:30–10:30 &nbsp; 15:00–17:30</td></tr>
+                            <tr><td>Úterý</td><td>8:30–10:30 &nbsp; 15:00–17:30</td></tr>
+                            <tr><td>Středa</td><td>8:30–10:30</td></tr>
+                            <tr><td>Čtvrtek</td><td>15:00–17:30</td></tr>
+                            <tr><td>Pátek</td><td>8:30–10:30 &nbsp; 15:00–17:30</td></tr>
+                            <tr><td>Sobota</td><td>8:30–10:00</td></tr>
+                            <tr><td>Neděle</td><td>zavřeno</td></tr>
+                        </table>
+                    </div>
+
+                    <!-- Pravý sloupec: mapa -->
+                    <div class="kontakt-mapa">
+                        <a href="https://maps.google.com/?q=Lipov%C3%A1+54,+664+84+Bo%C5%A1ovice" target="_blank" class="mapa-btn">📍 Zobrazit na Google Maps</a>
+                        <iframe
+                            src="https://maps.google.com/maps?q=Lipov%C3%A1+54,+664+84+Bo%C5%A1ovice&output=embed&z=15"
+                            width="100%"
+                            height="280"
+                            style="border:0; border-radius:6px; margin-top:12px;"
+                            allowfullscreen=""
+                            loading="lazy">
+                        </iframe>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ZÁPATÍ – zobrazuje se vždy -->
+            <footer class="info-footer">
+                Květinářství Iveta Ondrůjová &nbsp;|&nbsp; Bošovice Lipová 54 &nbsp;|&nbsp; Telefon: 728 752 306 &nbsp;|&nbsp; E-mail: <a href="mailto:kvetinkaondrujova@seznam.cz">kvetinkaondrujova@seznam.cz</a>
+            </footer>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
