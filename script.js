@@ -12,35 +12,40 @@
         return new Date(+parts[2], +parts[1] - 1, +parts[0]);
     }
 
+    function processAktuality(text) {
+        const items = text.split('\n')
+            .map(l => l.trim())
+            .filter(l => l && !l.startsWith('#'))
+            .map(l => {
+                const i1 = l.indexOf(';');
+                const i2 = l.indexOf(';', i1 + 1);
+                if (i1 < 0 || i2 < 0) return null;
+                const from = parseDate(l.slice(0, i1));
+                const to   = parseDate(l.slice(i1 + 1, i2));
+                if (!from || !to) return null;
+                return { from, to, text: l.slice(i2 + 1).trim() };
+            })
+            .filter(item => item && today >= item.from && today <= item.to);
+
+        if (!items.length) return;
+
+        list.innerHTML = items.map(item =>
+            `<div class="aktualita-item">` +
+            `<span class="aktualita-date">${item.from.toLocaleDateString('cs-CZ')}</span>` +
+            `<span class="aktualita-text">${item.text}</span>` +
+            `</div>`
+        ).join('');
+
+        box.style.display = '';
+    }
+
     fetch('aktuality.txt')
         .then(r => { if (!r.ok) throw new Error(); return r.text(); })
-        .then(text => {
-            const items = text.split('\n')
-                .map(l => l.trim())
-                .filter(l => l && !l.startsWith('#'))
-                .map(l => {
-                    const i1 = l.indexOf(';');
-                    const i2 = l.indexOf(';', i1 + 1);
-                    if (i1 < 0 || i2 < 0) return null;
-                    const from = parseDate(l.slice(0, i1));
-                    const to   = parseDate(l.slice(i1 + 1, i2));
-                    if (!from || !to) return null;
-                    return { from, to, text: l.slice(i2 + 1).trim() };
-                })
-                .filter(item => item && today >= item.from && today <= item.to);
-
-            if (!items.length) return;
-
-            list.innerHTML = items.map(item =>
-                `<div class="aktualita-item">` +
-                `<span class="aktualita-date">${item.from.toLocaleDateString('cs-CZ')}</span>` +
-                `<span class="aktualita-text">${item.text}</span>` +
-                `</div>`
-            ).join('');
-
-            box.style.display = '';
-        })
-        .catch(() => { /* soubor neexistuje nebo chyba – tiše ignorujeme */ });
+        .then(text => processAktuality(text))
+        .catch(() => {
+            // Záloha pro file:// – statický aktuality-data.js
+            if (typeof AKTUALITY_DATA !== 'undefined') processAktuality(AKTUALITY_DATA);
+        });
 })();
 
 // ── Galerie ──
